@@ -1,0 +1,107 @@
+# Supreme Research Corpus
+
+Research corpus for designing a production-quality global Claude Code control plane centered on `C:\Users\USERNAME\.claude\` for novice-driven software development.
+
+## Research cutoff
+
+Current corpus baseline: **October 1, 2026**. Claude Code product claims must be verified against Tier-1 Anthropic/Claude Code documentation current to that cutoff before they become production requirements.
+
+## Evidence policy
+
+This repository preserves research reports as provenance. Later reports may correct, narrow, or supersede earlier hypotheses. Do not silently rewrite older reports to make them appear consistent.
+
+When reports conflict, use this order:
+
+1. Current official Claude Code documentation/changelog and current documented schemas.
+2. Official Anthropic engineering/research evidence.
+3. Peer-reviewed or strong primary empirical research.
+4. Reproducible benchmark evidence.
+5. Practitioner/issue-tracker evidence for failure classes, not incidence estimates.
+6. Engineering judgment, explicitly labeled as such.
+
+An undocumented Claude Code setting, hook schema, environment variable, path, or feature must not become a production dependency merely because an earlier report named it.
+
+## Current corpus
+
+| Document | Role | Current status |
+|---|---|---|
+| `Claude Code Capability Inventory Research.md` | Initial capability/configuration inventory | Useful baseline; some product claims require re-verification against later research |
+| `Claude Code Control Surfaces.md` | Allocation across CLAUDE.md, rules, skills, agents, hooks, workflows, etc. | Strong directional input; later evidence governs disputed product details |
+| `Global Claude Code Control Plane Architecture for Novice-Driven Software Development.md` | Initial novice lifecycle/control-plane architecture | Hypothesis-generating; methodology mandates are not automatically accepted requirements |
+| `Preventing Architectural Decay in Agent-Generated Greenfield Projects.md` | Greenfield architecture safeguards | Valuable failure analysis; universal architecture/threshold claims are downgraded to conditional hypotheses |
+| `Evidence-Backed Brownfield Reconnaissance and Change Containment.md` | Brownfield safety, reconnaissance, containment, and evidence-sufficiency synthesis | **Accepted research input**; supersedes conflicting earlier prescriptions in this scope |
+
+## Accepted cross-project invariants
+
+The current evidence supports a **small universal kernel plus project-derived behavior**, not a giant global methodology.
+
+The global control plane should preserve these invariants:
+
+- Preserve pre-existing user work and distinguish it from agent-created changes.
+- Discover repository instructions before applying global preferences.
+- Discover the repository's actual build/test/lint/typecheck/generation workflow rather than assuming generic commands.
+- Prefer existing nearby implementations and repository conventions over the agent's preferred architecture.
+- Search for existing utilities before creating new abstractions.
+- Identify public/API/schema/persistence/dependency boundaries before nontrivial edits.
+- Establish observable behavior or another credible verification oracle before claiming completion.
+- Keep implementation scope proportional and explicitly surface unresolved high-impact decisions.
+- Use the simplest reliable enforcement mechanism: declarative permission denials for static hazards; contextual hooks only where computation is needed; human approval for ambiguous consequential actions.
+- Treat Windows as a first-class environment and never claim sandbox containment where the platform does not provide it.
+- Validate control-plane health; a missing or failing hook/interpreter must not silently masquerade as protection.
+- Keep model-compensation heuristics replaceable as Claude Code/model capabilities evolve.
+
+## Brownfield pre-write policy
+
+For nontrivial existing-repository work, the accepted research direction is:
+
+`PRESERVE STATE -> DISCOVER INSTRUCTIONS -> DISCOVER TOOLCHAIN -> LOCALIZE BEHAVIOR -> INSPECT NEARBY PATTERNS/INTERFACES -> IDENTIFY SENSITIVE/GENERATED AREAS -> ESTABLISH REPRODUCER/ORACLE -> BUILD PROPORTIONAL CHANGE MAP -> WRITE`
+
+This is an **adaptive evidence-sufficiency protocol**, not a fixed file-count/token-count ceremony. Small obvious changes may take a shorter path when the relevant facts are already evident.
+
+## Superseded or downgraded hypotheses
+
+The following earlier ideas are **not accepted as universal global requirements** unless later evidence re-establishes them:
+
+- Mandatory Vertical Slice Architecture, Clean Architecture, hexagonal architecture, layered architecture, microservices, modular monoliths, CQRS, event sourcing, or any other single topology.
+- Fixed global complexity thresholds such as cyclomatic complexity `<=10`/`<=15`, `>85%` feature-local dependencies, maximum file counts, or changed-line limits.
+- Mandatory ADR creation for every architectural-looking change.
+- Universal TDD. The invariant is credible verification, not one test-ordering doctrine.
+- Mandatory multi-agent or agent-team routing for substantive tasks.
+- Reading the entire repository before editing.
+- Heavyweight planning/change-map documents for trivial obvious edits.
+- Treating `PostToolUse` as a mechanism that prevents a tool action that already executed.
+- Treating command hooks as infallible security boundaries; hook failures/timeouts can be nonblocking.
+- Assuming native Windows Claude Code provides the same sandbox guarantees as WSL2.
+- Shipping undocumented configuration keys. Earlier references to `defaultShell`, `autoCompactEnabled`, `askUserQuestionTimeout`, or a settings key named `ultracode` remain excluded until independently verified in Tier-1 documentation/schema for the target Claude Code version.
+
+## Research coverage
+
+Completed or substantially covered:
+
+- Claude Code capability/configuration surface
+- Control-surface responsibility allocation
+- Novice-to-MVP lifecycle foundations
+- Greenfield architectural failure analysis
+- Brownfield reconnaissance
+- Scope/destructive change containment foundations
+
+Still requiring dedicated or consolidated research before final design:
+
+- Root-cause debugging, testing strategy, and proof-of-completion semantics
+- Durable project state, grounding, memory, and documentation-drift detection
+- Windows-native security, credentials, hook runtime, and containment architecture
+- Adaptive orchestration, cost/latency policy, and independent-task routing
+- Maintainability quality ratchets, novice interaction policy, and evaluation/ablation methodology
+
+## Design principle
+
+Supreme should not be a static pile of prompts that forces every repository into one engineering ideology. The target is an evidence-driven control plane with:
+
+- a thin universal invariant layer,
+- deterministic safety where the platform can actually enforce it,
+- project-derived conventions and verification,
+- progressive disclosure through skills/rules,
+- isolated agents/workflows only when their cost is justified,
+- durable evidence across sessions/compaction,
+- explicit human escalation for consequential ambiguity, and
+- an evaluation/ablation loop that requires every added rule, hook, skill, agent, or workflow to earn its complexity.
