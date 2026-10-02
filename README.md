@@ -30,6 +30,7 @@ An undocumented Claude Code setting, hook schema, environment variable, path, fr
 | `Global Claude Code Control Plane Architecture for Novice-Driven Software Development.md` | Initial novice lifecycle/control-plane architecture | Hypothesis-generating; methodology mandates are not automatically accepted requirements |
 | `Preventing Architectural Decay in Agent-Generated Greenfield Projects.md` | Greenfield architecture safeguards | Valuable failure analysis; universal architecture/threshold claims are downgraded to conditional hypotheses |
 | `Evidence-Backed Brownfield Reconnaissance and Change Containment.md` | Full research report for repository reconnaissance, scope containment, and destructive-action control | **Accepted research input**; supersedes conflicting earlier prescriptions in this scope |
+| `Containment, Auto Mode, Network, and Change-Surface Addendum.md` | Focused addendum on Auto mode, approval fatigue, environmental containment, network/secrets boundaries, and deviation-based scope control | **Accepted research addendum**; governs where more specific in this scope |
 
 ## Accepted cross-project invariants
 
@@ -48,6 +49,9 @@ The global control plane should preserve these invariants:
 - Use the simplest reliable enforcement mechanism: declarative permission denials for static hazards; contextual hooks only where computation is needed; human approval for ambiguous consequential actions.
 - Treat Windows as a first-class environment and never claim sandbox containment where the platform does not provide it.
 - Validate control-plane health; a missing or failing hook/interpreter must not silently masquerade as protection.
+- Prefer hard filesystem/network/credential boundaries over repeated permission prompts when the execution environment supports them.
+- Treat Claude Code Auto mode as an **experimental probabilistic supervision layer**, not deterministic containment.
+- Use task-local expected/protected change surfaces to detect scope deviation; do not impose universal file-count or line-count caps.
 - Keep model-compensation heuristics replaceable as Claude Code/model capabilities evolve.
 
 ## Brownfield pre-write policy
@@ -105,6 +109,22 @@ Use the simplest mechanism that actually provides the required guarantee:
 
 Hooks are not assumed infallible. Command hooks can fail open on timeout/start failure/nonblocking errors, so hook health and runtime availability are themselves control-plane requirements.
 
+## Containment and autonomy policy
+
+Anthropic's 2025–2026 engineering evidence favors **containment plus selective supervision** over repeated approval prompts. Anthropic reports that users approve roughly 93% of permission dialogs and that sandboxing reduced prompts by 84% in internal use. Its documented overeager-action incidents include remote-branch deletion, credential misuse, and attempted production migrations.
+
+Supreme therefore treats the layers differently:
+
+1. **Environment containment where available:** filesystem reach, network egress, and credential exposure.
+2. **Declarative permissions:** static deny/ask/allow policy.
+3. **Auto mode where supported:** experimental model-classifier supervision that reduces prompts but is not deterministic.
+4. **Contextual `PreToolUse`:** computed task-local ownership/scope decisions.
+5. **Human escalation:** irreversible, security-sensitive, ambiguous, or externally consequential operations.
+
+When an action can be safely denied and the agent can pursue a harmless alternative, prefer **deny-and-continue** over immediately interrupting the user. Repeated denials or consequential ambiguity should escalate.
+
+For high-autonomy or untrusted work, strong containment requires both filesystem and network boundaries and minimizing reachable credentials. Native Windows must not be described as having the same Claude Code sandbox guarantees as supported WSL2/Linux/macOS environments.
+
 ## Superseded or downgraded hypotheses
 
 The following earlier ideas are **not accepted as universal global requirements** unless later evidence re-establishes them:
@@ -130,11 +150,14 @@ Completed or substantially covered:
 - Novice-to-MVP lifecycle foundations
 - Greenfield architectural failure analysis
 - **Brownfield reconnaissance — strongly answered**
-- **Scope/destructive change containment — mostly answered; implementation mechanics remain**
+- **Scope/destructive change containment — strongly answered at the policy level; implementation/runtime mechanics remain**
 - Testing strategy foundations against universal TDD and single generated-test oracles
 - Efficiency/context foundations through targeted retrieval and evidence sufficiency
 - Windows-enforcement constraints relevant to native Windows vs WSL2
 - Novice approval design toward consequence-based escalation
+- Auto mode / approval-fatigue / deny-and-continue policy
+- Network egress, secret-boundary, and credential-minimization principles
+- Deviation-based change-surface control instead of fixed maximum diff thresholds
 
 Still requiring dedicated or consolidated research before final design:
 
