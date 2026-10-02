@@ -19,7 +19,7 @@ When reports conflict, use this order:
 5. Practitioner/issue-tracker evidence for failure classes, not incidence estimates.
 6. Engineering judgment, explicitly labeled as such.
 
-An undocumented Claude Code setting, hook schema, environment variable, path, or feature must not become a production dependency merely because an earlier report named it.
+An undocumented Claude Code setting, hook schema, environment variable, path, frontmatter field, CLI switch, or feature must not become a production dependency merely because an earlier report named it.
 
 ## Current corpus
 
@@ -29,7 +29,7 @@ An undocumented Claude Code setting, hook schema, environment variable, path, or
 | `Claude Code Control Surfaces.md` | Allocation across CLAUDE.md, rules, skills, agents, hooks, workflows, etc. | Strong directional input; later evidence governs disputed product details |
 | `Global Claude Code Control Plane Architecture for Novice-Driven Software Development.md` | Initial novice lifecycle/control-plane architecture | Hypothesis-generating; methodology mandates are not automatically accepted requirements |
 | `Preventing Architectural Decay in Agent-Generated Greenfield Projects.md` | Greenfield architecture safeguards | Valuable failure analysis; universal architecture/threshold claims are downgraded to conditional hypotheses |
-| `Evidence-Backed Brownfield Reconnaissance and Change Containment.md` | Brownfield safety, reconnaissance, containment, and evidence-sufficiency synthesis | **Accepted research input**; supersedes conflicting earlier prescriptions in this scope |
+| `Evidence-Backed Brownfield Reconnaissance and Change Containment.md` | Full research report for repository reconnaissance, scope containment, and destructive-action control | **Accepted research input**; supersedes conflicting earlier prescriptions in this scope |
 
 ## Accepted cross-project invariants
 
@@ -58,6 +58,53 @@ For nontrivial existing-repository work, the accepted research direction is:
 
 This is an **adaptive evidence-sufficiency protocol**, not a fixed file-count/token-count ceremony. Small obvious changes may take a shorter path when the relevant facts are already evident.
 
+The Evidence Sufficiency Gate is semantic. Before nontrivial writes, the agent should be able to state from repository evidence:
+
+1. current branch and pre-existing dirty/staged/untracked work;
+2. effective instructions governing the target area;
+3. project commands/toolchain relevant to the task;
+4. implementation currently responsible for the behavior;
+5. at least one relevant existing pattern, or an explicit finding that none exists;
+6. public/interface/dependency boundaries affected;
+7. whether generated/vendor/migration/dependency-sensitive artifacts are involved;
+8. how requested behavior will be reproduced or verified;
+9. expected change surface and deliberate out-of-scope areas;
+10. unresolved ambiguity severe enough to require human judgment.
+
+## Consequence-based escalation boundary
+
+For the novice-oriented profile, **model confidence does not waive escalation** for operations with hard-to-reverse or externally consequential effects.
+
+Always escalate by default:
+
+- discarding, overwriting, obscuring, cleaning, resetting, or otherwise destroying pre-existing user work;
+- destructive Git cleanup/restoration that can affect files outside an agent-owned disposable worktree;
+- irreversible or data-destructive migrations and production-data mutations;
+- production deployments, production configuration changes, or infrastructure actions with material external side effects;
+- credential, secret, authentication, authorization, encryption, or other security-boundary changes whose consequences cannot be safely established from repository-local evidence alone;
+- external network actions that create, delete, publish, bill, provision, revoke, or otherwise mutate remote state outside ordinary local development;
+- breaking public API/schema/CLI/persistence contracts unless the compatibility break was explicitly requested and authorized.
+
+Escalate unless standing project/user authorization already exists:
+
+- adding or materially upgrading production/runtime dependencies;
+- deliberately departing from established repository architecture or conventions.
+
+Do **not** translate this into approval spam. Harmless read-only inspection, ordinary edits inside the evidenced change surface, local deterministic checks, and reversible project-authorized actions should remain autonomous.
+
+## Enforcement hierarchy
+
+Use the simplest mechanism that actually provides the required guarantee:
+
+1. `permissions.deny` for static expressible catastrophic prohibitions.
+2. `PreToolUse` for contextual/computed decisions.
+3. project-local instructions/rules/skills for behavioral guidance.
+4. `PostToolUse` for validation and corrective feedback, never as retroactive prevention.
+5. Stop/completion checks for evidence required before claiming work finished.
+6. explicit human approval for consequential ambiguity or irreversible/external effects.
+
+Hooks are not assumed infallible. Command hooks can fail open on timeout/start failure/nonblocking errors, so hook health and runtime availability are themselves control-plane requirements.
+
 ## Superseded or downgraded hypotheses
 
 The following earlier ideas are **not accepted as universal global requirements** unless later evidence re-establishes them:
@@ -70,7 +117,7 @@ The following earlier ideas are **not accepted as universal global requirements*
 - Reading the entire repository before editing.
 - Heavyweight planning/change-map documents for trivial obvious edits.
 - Treating `PostToolUse` as a mechanism that prevents a tool action that already executed.
-- Treating command hooks as infallible security boundaries; hook failures/timeouts can be nonblocking.
+- Treating command hooks as infallible security boundaries.
 - Assuming native Windows Claude Code provides the same sandbox guarantees as WSL2.
 - Shipping undocumented configuration keys. Earlier references to `defaultShell`, `autoCompactEnabled`, `askUserQuestionTimeout`, or a settings key named `ultracode` remain excluded until independently verified in Tier-1 documentation/schema for the target Claude Code version.
 
@@ -82,8 +129,12 @@ Completed or substantially covered:
 - Control-surface responsibility allocation
 - Novice-to-MVP lifecycle foundations
 - Greenfield architectural failure analysis
-- Brownfield reconnaissance
-- Scope/destructive change containment foundations
+- **Brownfield reconnaissance — strongly answered**
+- **Scope/destructive change containment — mostly answered; implementation mechanics remain**
+- Testing strategy foundations against universal TDD and single generated-test oracles
+- Efficiency/context foundations through targeted retrieval and evidence sufficiency
+- Windows-enforcement constraints relevant to native Windows vs WSL2
+- Novice approval design toward consequence-based escalation
 
 Still requiring dedicated or consolidated research before final design:
 
@@ -103,5 +154,14 @@ Supreme should not be a static pile of prompts that forces every repository into
 - progressive disclosure through skills/rules,
 - isolated agents/workflows only when their cost is justified,
 - durable evidence across sessions/compaction,
-- explicit human escalation for consequential ambiguity, and
+- explicit human escalation for consequential ambiguity,
+- version-aware validation of Claude Code configuration and control surfaces, and
 - an evaluation/ablation loop that requires every added rule, hook, skill, agent, or workflow to earn its complexity.
+
+## Next research priority
+
+The next highest-value pass is **Debugging, Testing & Proof of Completion**:
+
+`OBSERVE -> REPRODUCE -> LOCALIZE -> HYPOTHESIZE -> DISCRIMINATE -> FIX -> VERIFY -> REGRESSION CHECK -> COMPLETE`
+
+The research should determine which transitions require executable evidence, when independent verification is warranted, how to resist test gaming, and exactly what evidence permits Claude to claim that work is fixed, passing, working, or complete.
