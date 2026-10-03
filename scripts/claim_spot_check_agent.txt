@@ -1,0 +1,3 @@
+Claim-level spot-check agent protocol
+
+Run `python scripts/claim_spot_check.py <repo> --sample-size 5` once per session. The default seed is the session date; record any override. For every selected claim, fetch the cited source URL anew, navigate to its locator, and compare the source text with the exact claim. Report supported, contradicted, or unresolved; include the fetch date and precise locator. Do not infer support from a search snippet or a different claim. If no source is available, or the locator does not identify relevant evidence, mark unresolved and open a backlog item. Correct a claim only after it satisfies G1. The generator reports fewer than five selected claims when fewer than five source-tagged claims are available.
