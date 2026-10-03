@@ -1,0 +1,147 @@
+{
+  "today": "2026-10-02",
+  "errors": [
+    {
+      "file": "AGENTS.md",
+      "code": "FRONTMATTER",
+      "msg": "missing or unparsable frontmatter"
+    },
+    {
+      "file": "caretaker_audit_and_delta.md",
+      "code": "FRONTMATTER",
+      "msg": "missing or unparsable frontmatter"
+    },
+    {
+      "file": "Claude Code Capability Inventory Research.md",
+      "code": "SIZE_HARD",
+      "msg": "~11724 tokens > 4000; split"
+    },
+    {
+      "file": "Claude Code Capability Inventory Research.md",
+      "code": "FRONTMATTER",
+      "msg": "missing or unparsable frontmatter"
+    },
+    {
+      "file": "Claude Code Control Plane Research.md",
+      "code": "SIZE_HARD",
+      "msg": "~10350 tokens > 4000; split"
+    },
+    {
+      "file": "Claude Code Control Plane Research.md",
+      "code": "FRONTMATTER",
+      "msg": "missing or unparsable frontmatter"
+    },
+    {
+      "file": "Claude Code Control Surfaces.md",
+      "code": "SIZE_HARD",
+      "msg": "~12398 tokens > 4000; split"
+    },
+    {
+      "file": "Claude Code Control Surfaces.md",
+      "code": "FRONTMATTER",
+      "msg": "missing or unparsable frontmatter"
+    },
+    {
+      "file": "Claude Code Debugging Workflow.md",
+      "code": "SIZE_HARD",
+      "msg": "~9871 tokens > 4000; split"
+    },
+    {
+      "file": "Claude Code Debugging Workflow.md",
+      "code": "FRONTMATTER",
+      "msg": "missing or unparsable frontmatter"
+    },
+    {
+      "file": "Claude Code Multi-Agent Research.md",
+      "code": "SIZE_HARD",
+      "msg": "~14671 tokens > 4000; split"
+    },
+    {
+      "file": "Claude Code Multi-Agent Research.md",
+      "code": "FRONTMATTER",
+      "msg": "missing or unparsable frontmatter"
+    },
+    {
+      "file": "Claude Code Testing Research Protocol.md",
+      "code": "SIZE_HARD",
+      "msg": "~9561 tokens > 4000; split"
+    },
+    {
+      "file": "Claude Code Testing Research Protocol.md",
+      "code": "FRONTMATTER",
+      "msg": "missing or unparsable frontmatter"
+    },
+    {
+      "file": "Containment, Auto Mode, Network, and Change-Surface Addendum.md",
+      "code": "SIZE_HARD",
+      "msg": "~5447 tokens > 4000; split"
+    },
+    {
+      "file": "Containment, Auto Mode, Network, and Change-Surface Addendum.md",
+      "code": "FRONTMATTER",
+      "msg": "missing or unparsable frontmatter"
+    },
+    {
+      "file": "Evidence-Backed Brownfield Reconnaissance and Change Containment.md",
+      "code": "SIZE_HARD",
+      "msg": "~10151 tokens > 4000; split"
+    },
+    {
+      "file": "Evidence-Backed Brownfield Reconnaissance and Change Containment.md",
+      "code": "FRONTMATTER",
+      "msg": "missing or unparsable frontmatter"
+    },
+    {
+      "file": "Global Claude Code Control Plane Architecture for Novice-Driven Software Development.md",
+      "code": "SIZE_HARD",
+      "msg": "~9870 tokens > 4000; split"
+    },
+    {
+      "file": "Global Claude Code Control Plane Architecture for Novice-Driven Software Development.md",
+      "code": "FRONTMATTER",
+      "msg": "missing or unparsable frontmatter"
+    },
+    {
+      "file": "Preventing Architectural Decay in Agent-Generated Greenfield Projects.md",
+      "code": "SIZE_HARD",
+      "msg": "~12472 tokens > 4000; split"
+    },
+    {
+      "file": "Preventing Architectural Decay in Agent-Generated Greenfield Projects.md",
+      "code": "FRONTMATTER",
+      "msg": "missing or unparsable frontmatter"
+    },
+    {
+      "file": "README.md",
+      "code": "FRONTMATTER",
+      "msg": "missing or unparsable frontmatter"
+    }
+  ],
+  "warnings": [
+    {
+      "file": "AGENTS.md",
+      "code": "SIZE_SOFT",
+      "msg": "~3621 tokens > 1500"
+    },
+    {
+      "file": "caretaker_audit_and_delta.md",
+      "code": "SIZE_SOFT",
+      "msg": "~2203 tokens > 1500"
+    },
+    {
+      "file": "README.md",
+      "code": "SIZE_SOFT",
+      "msg": "~3406 tokens > 1500"
+    }
+  ],
+  "metrics": {
+    "files": 13,
+    "frontmatter_complete_pct": 0.0,
+    "overdue_files": 0,
+    "claim_tags": 0,
+    "verified_claim_tags": 0,
+    "avg_tokens": 8903,
+    "error_count": 23,
+    "warning_count": 3
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "session_date": "2026-10-02",
+  "target": "knowledge/containment-auto-mode-network-and-change-surface-addendum/02-finding-2-auto-mode-is-useful-but-probabilistic.md",
+  "claim_inventory": "reports\\2026-10-02.stagev-inventory.md",
+  "claims_total": 47,
+  "claims_load_bearing": 15,
+  "claims_verified": 27,
+  "claims_partly_verified": 17,
+  "claims_refuted_and_corrected": 0,
+  "claims_unverified": 3,
+  "claims_unresolvable": 0,
+  "initial_error_count": 20,
+  "initial_error_rate_pct": 42.6,
+  "online_primary_page_fetches_total": 55,
+  "local_source_reads": 1,
+  "mean_primary_page_fetches_per_claim": 1.17,
+  "all_inventory_fetches_including_local": 56,
+  "fetch_tool": "web open of primary page itself; C40 checked by PowerShell repository reads",
+  "load_bearing_with_supporting_primary_source": 14,
+  "load_bearing_source_coverage_pct": 93.3,
+  "factual_line_tag_coverage_pct": 100.0,
+  "factual_line_tag_basis": "88 validator-classified factual lines in the target; all have explicit tags. Detector is heuristic.",
+  "target_per_file_line_metrics": {
+    "lines_verified": 23,
+    "lines_unverified": 65,
+    "lines_refuted_corrected": 0
+  },
+  "independent_check_agreement": {
+    "agreed": 5,
+    "sampled": 5
+  },
+  "wall_time": {
+    "start_utc": "2026-10-03T01:28:09Z",
+    "end_utc": "2026-10-03T02:13:44Z",
+    "minutes_rounded": 46,
+    "scope": "elapsed since first reliable timestamp; earlier initial reconnaissance was not timed"
+  },
+  "saved_artifact_size_proxy": {
+    "files": [
+      "knowledge/containment-auto-mode-network-and-change-surface-addendum/02-finding-2-auto-mode-is-useful-but-probabilistic.md",
+      "reports\\2026-10-02.stagev-inventory.md",
+      "reports/2026-10-02-stagev.md",
+      "reports\\2026-10-02-stagev-validator.metrics.json"
+    ],
+    "characters": 38471,
+    "approx_tokens_chars_div_4": 9618,
+    "approx_tokens_per_claim": 204.6
+  },
+  "remaining_legacy_tokens": 106515,
+  "remaining_claims_estimate": 1294,
+  "projected_remaining_artifact_tokens_estimate": {
+    "label": "[ESTIMATED]",
+    "measured_rate_approx_tokens": 264752,
+    "upper_planning_at_1_5x_approx_tokens": 397128
+  },
+  "proxy_limit": "Artifact-size estimate only; no model runtime token or dollar billing telemetry was available.",
+  "validator_output": "reports\\2026-10-02-stagev-validator.metrics.json",
+  "validator_exit_code": 0,
+  "validator_legacy_remaining": 7,
+  "contract_gap": "Heuristic factual-line detection cannot prove semantic claim coverage; BACKLOG.md C-012"
+}
