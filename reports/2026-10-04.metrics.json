@@ -59,12 +59,18 @@
     "stable": 0
   },
   "backlog": {
-    "opened": ["C-030", "C-031"],
+    "opened": [
+      "C-030",
+      "C-031",
+      "C-032",
+      "C-033",
+      "C-034"
+    ],
     "closed": []
   },
   "tests": {
     "command": "python tests/run_validator_tests.py",
-    "result": "PASS"
+    "result": "NOT RUN in closeout; preceding inventory PASS"
   },
   "diff_check": "PASS: no whitespace errors",
   "novel_solutions_confirmed": 0,
