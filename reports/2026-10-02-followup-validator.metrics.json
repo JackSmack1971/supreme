@@ -1,0 +1,121 @@
+{
+  "today": "2026-10-02",
+  "errors": [],
+  "warnings": [
+    {
+      "file": "knowledge/claude-code-testing-research-protocol/01-architectural-protocol-developing-a-global-claud.md",
+      "code": "SIZE_SOFT",
+      "msg": "~3082 tokens > 1500"
+    },
+    {
+      "file": "knowledge/claude-code-testing-research-protocol/02-the-expert-executor-architecture.md",
+      "code": "SIZE_SOFT",
+      "msg": "~3019 tokens > 1500"
+    },
+    {
+      "file": "knowledge/claude-code-testing-research-protocol/03-part-vi-deconstructing-legacy-hypotheses-jacksma.md",
+      "code": "SIZE_SOFT",
+      "msg": "~3096 tokens > 1500"
+    },
+    {
+      "file": "knowledge/containment-auto-mode-network-and-change-surface-addendum/01-containment-auto-mode-network-and-change-surface.md",
+      "code": "SIZE_SOFT",
+      "msg": "~3102 tokens > 1500"
+    },
+    {
+      "file": "knowledge/containment-auto-mode-network-and-change-surface-addendum/02-finding-2-auto-mode-is-useful-but-probabilistic.md",
+      "code": "SIZE_SOFT",
+      "msg": "~3067 tokens > 1500"
+    },
+    {
+      "file": "knowledge/global-claude-code-control-plane-architecture-for-novice-driven-software-development/01-engineering-research-report-global-claude-code-c.md",
+      "code": "SIZE_SOFT",
+      "msg": "~3121 tokens > 1500"
+    },
+    {
+      "file": "knowledge/global-claude-code-control-plane-architecture-for-novice-driven-software-development/02-lifecycle-engineering-practices-for-novices.md",
+      "code": "SIZE_SOFT",
+      "msg": "~3098 tokens > 1500"
+    },
+    {
+      "file": "knowledge/global-claude-code-control-plane-architecture-for-novice-driven-software-development/03-3-deferred-decisions.md",
+      "code": "SIZE_SOFT",
+      "msg": "~3092 tokens > 1500"
+    },
+    {
+      "file": "knowledge/global-claude-code-control-plane-architecture-for-novice-driven-software-development/04-global-claude-code-control-plane-architecture-fo.md",
+      "code": "SIZE_SOFT",
+      "msg": "~1599 tokens > 1500"
+    }
+  ],
+  "metrics": {
+    "files": 10,
+    "legacy_files": 7,
+    "legacy_tokens": 106515,
+    "unverified_files": 9,
+    "tokens": 27506,
+    "fm_complete": 10,
+    "untagged_lines": 0,
+    "per_file": {
+      "knowledge/claude-code-testing-research-protocol/01-architectural-protocol-developing-a-global-claud.md": {
+        "lines_verified": 0,
+        "lines_unverified": 55,
+        "lines_refuted_corrected": 0
+      },
+      "knowledge/claude-code-testing-research-protocol/02-the-expert-executor-architecture.md": {
+        "lines_verified": 0,
+        "lines_unverified": 48,
+        "lines_refuted_corrected": 0
+      },
+      "knowledge/claude-code-testing-research-protocol/03-part-vi-deconstructing-legacy-hypotheses-jacksma.md": {
+        "lines_verified": 0,
+        "lines_unverified": 53,
+        "lines_refuted_corrected": 0
+      },
+      "knowledge/claude-code-testing-research-protocol/04-works-cited.md": {
+        "lines_verified": 0,
+        "lines_unverified": 26,
+        "lines_refuted_corrected": 0
+      },
+      "knowledge/containment-auto-mode-network-and-change-surface-addendum/01-containment-auto-mode-network-and-change-surface.md": {
+        "lines_verified": 0,
+        "lines_unverified": 84,
+        "lines_refuted_corrected": 0
+      },
+      "knowledge/containment-auto-mode-network-and-change-surface-addendum/02-finding-2-auto-mode-is-useful-but-probabilistic.md": {
+        "lines_verified": 46,
+        "lines_unverified": 21,
+        "lines_refuted_corrected": 0
+      },
+      "knowledge/global-claude-code-control-plane-architecture-for-novice-driven-software-development/01-engineering-research-report-global-claude-code-c.md": {
+        "lines_verified": 0,
+        "lines_unverified": 67,
+        "lines_refuted_corrected": 0
+      },
+      "knowledge/global-claude-code-control-plane-architecture-for-novice-driven-software-development/02-lifecycle-engineering-practices-for-novices.md": {
+        "lines_verified": 0,
+        "lines_unverified": 41,
+        "lines_refuted_corrected": 0
+      },
+      "knowledge/global-claude-code-control-plane-architecture-for-novice-driven-software-development/03-3-deferred-decisions.md": {
+        "lines_verified": 0,
+        "lines_unverified": 65,
+        "lines_refuted_corrected": 0
+      },
+      "knowledge/global-claude-code-control-plane-architecture-for-novice-driven-software-development/04-global-claude-code-control-plane-architecture-fo.md": {
+        "lines_verified": 0,
+        "lines_unverified": 32,
+        "lines_refuted_corrected": 0
+      }
+    },
+    "frontmatter_complete_pct": 100.0,
+    "overdue_files": 0,
+    "claim_tags": 67,
+    "verified_claim_tags": 46,
+    "avg_tokens": 2751,
+    "error_count": 0,
+    "warning_count": 9,
+    "errors_by_code": {},
+    "legacy_remaining": 7
+  }
+}

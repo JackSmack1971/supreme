@@ -1,0 +1,65 @@
+claim_id,tool_calls,fetches,seconds,outcome
+C01,[UNKNOWN],1,[UNKNOWN],verified
+C02,[UNKNOWN],1,[UNKNOWN],verified
+C03,[UNKNOWN],[UNKNOWN],[UNKNOWN],H4 confirm
+C04,[UNKNOWN],1,[UNKNOWN],verified
+C05-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C05-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C06,[UNKNOWN],1,[UNKNOWN],unverified
+C07,[UNKNOWN],[UNKNOWN],[UNKNOWN],H4 confirm
+C08,[UNKNOWN],[UNKNOWN],[UNKNOWN],H4 confirm; clarified false-positive-rate wording
+C10,[UNKNOWN],1,[UNKNOWN],verified
+C11,[UNKNOWN],[UNKNOWN],[UNKNOWN],H4 confirm
+C12,[UNKNOWN],1,[UNKNOWN],verified
+C13-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C13-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C14,[UNKNOWN],1,[UNKNOWN],verified
+C16-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C16-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C17-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C17-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C18,[UNKNOWN],[UNKNOWN],[UNKNOWN],H4 confirm
+C19,[UNKNOWN],[UNKNOWN],[UNKNOWN],H4 confirm
+C20-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C20-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C21,[UNKNOWN],1,[UNKNOWN],"verified; fault-proneness study, scope limited"
+C22-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C22-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C23,[UNKNOWN],1,[UNKNOWN],verified
+C24-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C24-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C25-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C25-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C26,[UNKNOWN],1,[UNKNOWN],unverified
+C27,[UNKNOWN],1,[UNKNOWN],unverified
+C28-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C28-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C29,[UNKNOWN],1,[UNKNOWN],verified
+C30,[UNKNOWN],[UNKNOWN],[UNKNOWN],H4 confirm
+C31-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C31-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C32-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C32-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C33-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C33-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C34,[UNKNOWN],[UNKNOWN],[UNKNOWN],H4 initial partial; narrowed claim; recheck confirm
+C35-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C35-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C36-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C36-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C37-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C37-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C38-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C38-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C39,[UNKNOWN],[UNKNOWN],[UNKNOWN],H4 confirm
+C40-S,[UNKNOWN],[UNKNOWN],[UNKNOWN],supported atomic sub-claim; source-fetch allocation [UNKNOWN]
+C40-U,[UNKNOWN],[UNKNOWN],[UNKNOWN],UNVERIFIED remainder; distinct research attempts [UNKNOWN]
+C41,[UNKNOWN],1,[UNKNOWN],verified
+C42,[UNKNOWN],1,[UNKNOWN],verified
+C43,[UNKNOWN],[UNKNOWN],[UNKNOWN],H4 initial title contradiction; corrected claim; recheck confirm
+C44,[UNKNOWN],2,[UNKNOWN],verified
+C45,[UNKNOWN],2,[UNKNOWN],verified
+C46,[UNKNOWN],2,[UNKNOWN],verified
+C47,[UNKNOWN],1,[UNKNOWN],verified
+C48,[UNKNOWN],1,[UNKNOWN],verified
+C49,[UNKNOWN],1,[UNKNOWN],verified
