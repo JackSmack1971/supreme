@@ -29,11 +29,13 @@ def main():
         # Removing tag_default turns factual lines without tags into errors.
         promoted=base/"promoted"; promoted.mkdir(); setup(promoted); (promoted/"knowledge"/"good.md").write_text(FM.replace("Claim [VERIFIED 2026-10-02 S1]","This is a sufficiently long factual claim [VERIFIED 2026-10-02 S1]"),encoding="utf-8"); subprocess.run([sys.executable,str(VALIDATOR),str(promoted),"--write-index"],capture_output=True); r=run(promoted); assert r.returncode==0
         (promoted/"knowledge"/"good.md").write_text(FM.replace("Claim [VERIFIED 2026-10-02 S1]","This is a sufficiently long factual claim without a tag"),encoding="utf-8"); r=run(promoted); assert r.returncode==1 and "UNTAGGED_FACT" in {e["code"] for e in json.loads(r.stdout)["errors"]}
-        # H1: any untagged body line with at least five words fails, regardless of its first character.
+        # H1: untagged body lines with at least five words fail, including table rows.
         conservative=base/"conservative"; conservative.mkdir(); setup(conservative); subprocess.run([sys.executable,str(VALIDATOR),str(conservative),"--write-index"],capture_output=True)
         (conservative/"knowledge"/"good.md").write_text(FM.replace("Claim [VERIFIED 2026-10-02 S1]","short note\nthis lowercase line has five words"),encoding="utf-8")
         r=run(conservative); assert r.returncode==1 and "UNTAGGED_FACT" in {e["code"] for e in json.loads(r.stdout)["errors"]}
-        (conservative/"knowledge"/"good.md").write_text(FM.replace("Claim [VERIFIED 2026-10-02 S1]","short note\n```text\nthis lowercase line has five words\n```\n| a | b |\n|---|---|\n## A heading with several words"),encoding="utf-8")
+        (conservative/"knowledge"/"good.md").write_text(FM.replace("Claim [VERIFIED 2026-10-02 S1]","| This table row has six factual words |"),encoding="utf-8")
+        r=run(conservative); assert r.returncode==1 and "UNTAGGED_FACT" in {e["code"] for e in json.loads(r.stdout)["errors"]}
+        (conservative/"knowledge"/"good.md").write_text(FM.replace("Claim [VERIFIED 2026-10-02 S1]","short note\n```text\nthis lowercase line has five words\n```\n| a | b | [UNVERIFIED]\n|---|---|\n## A heading with several words"),encoding="utf-8")
         r=run(conservative); assert r.returncode==0, json.loads(r.stdout)["errors"]
         # Per-file line metrics are always emitted.
         assert set(json.loads(run(clean).stdout)["metrics"]["per_file"]["knowledge/good.md"])=={"lines_verified","lines_unverified","lines_refuted_corrected"}

@@ -25,7 +25,7 @@
     {
       "file": "knowledge/containment-auto-mode-network-and-change-surface-addendum/02-finding-2-auto-mode-is-useful-but-probabilistic.md",
       "code": "SIZE_SOFT",
-      "msg": "~3868 tokens > 1500"
+      "msg": "~3067 tokens > 1500"
     },
     {
       "file": "knowledge/global-claude-code-control-plane-architecture-for-novice-driven-software-development/01-engineering-research-report-global-claude-code-c.md",
@@ -53,166 +53,69 @@
     "legacy_files": 7,
     "legacy_tokens": 106515,
     "unverified_files": 9,
-    "tokens": 28307,
+    "tokens": 27506,
     "fm_complete": 10,
     "untagged_lines": 0,
     "per_file": {
       "knowledge/claude-code-testing-research-protocol/01-architectural-protocol-developing-a-global-claud.md": {
         "lines_verified": 0,
-        "lines_unverified": 15,
+        "lines_unverified": 55,
         "lines_refuted_corrected": 0
       },
       "knowledge/claude-code-testing-research-protocol/02-the-expert-executor-architecture.md": {
         "lines_verified": 0,
-        "lines_unverified": 18,
+        "lines_unverified": 48,
         "lines_refuted_corrected": 0
       },
       "knowledge/claude-code-testing-research-protocol/03-part-vi-deconstructing-legacy-hypotheses-jacksma.md": {
         "lines_verified": 0,
-        "lines_unverified": 24,
+        "lines_unverified": 53,
         "lines_refuted_corrected": 0
       },
       "knowledge/claude-code-testing-research-protocol/04-works-cited.md": {
         "lines_verified": 0,
-        "lines_unverified": 3,
+        "lines_unverified": 26,
         "lines_refuted_corrected": 0
       },
       "knowledge/containment-auto-mode-network-and-change-surface-addendum/01-containment-auto-mode-network-and-change-surface.md": {
         "lines_verified": 0,
-        "lines_unverified": 68,
+        "lines_unverified": 84,
         "lines_refuted_corrected": 0
       },
       "knowledge/containment-auto-mode-network-and-change-surface-addendum/02-finding-2-auto-mode-is-useful-but-probabilistic.md": {
-        "lines_verified": 23,
-        "lines_unverified": 65,
+        "lines_verified": 46,
+        "lines_unverified": 21,
         "lines_refuted_corrected": 0
       },
       "knowledge/global-claude-code-control-plane-architecture-for-novice-driven-software-development/01-engineering-research-report-global-claude-code-c.md": {
         "lines_verified": 0,
-        "lines_unverified": 5,
+        "lines_unverified": 67,
         "lines_refuted_corrected": 0
       },
       "knowledge/global-claude-code-control-plane-architecture-for-novice-driven-software-development/02-lifecycle-engineering-practices-for-novices.md": {
         "lines_verified": 0,
-        "lines_unverified": 23,
+        "lines_unverified": 41,
         "lines_refuted_corrected": 0
       },
       "knowledge/global-claude-code-control-plane-architecture-for-novice-driven-software-development/03-3-deferred-decisions.md": {
         "lines_verified": 0,
-        "lines_unverified": 38,
+        "lines_unverified": 65,
         "lines_refuted_corrected": 0
       },
       "knowledge/global-claude-code-control-plane-architecture-for-novice-driven-software-development/04-global-claude-code-control-plane-architecture-fo.md": {
         "lines_verified": 0,
-        "lines_unverified": 2,
+        "lines_unverified": 32,
         "lines_refuted_corrected": 0
       }
     },
     "frontmatter_complete_pct": 100.0,
     "overdue_files": 0,
-    "claim_tags": 92,
-    "verified_claim_tags": 23,
-    "avg_tokens": 2831,
+    "claim_tags": 67,
+    "verified_claim_tags": 46,
+    "avg_tokens": 2751,
     "error_count": 0,
     "warning_count": 9,
     "errors_by_code": {},
     "legacy_remaining": 7
-  },
-  "stage_v": {
-    "claims_total": 47,
-    "claims_load_bearing": 15,
-    "claims_verified": 27,
-    "claims_partly_verified": 17,
-    "claims_refuted_and_corrected": 0,
-    "claims_unverified": 3,
-    "claims_unresolvable": 0,
-    "initial_error_rate_pct": 42.6,
-    "mean_primary_page_fetches_per_claim": 1.17,
-    "load_bearing_source_coverage_pct": 93.3,
-    "factual_line_tag_coverage_pct": 100.0,
-    "independent_check_agreement": {
-      "agreed": 5,
-      "sampled": 5,
-      "method_note": "Earlier source-assisted check; not a qualifying H4 fresh-context verifier result."
-    },
-    "wall_time": {
-      "start_utc": "2026-10-03T01:28:09Z",
-      "end_utc": "2026-10-03T02:13:44Z",
-      "minutes_rounded": 46,
-      "scope": "elapsed since first reliable timestamp; earlier initial reconnaissance was not timed"
-    },
-    "artifact_size_per_claim": {
-      "approx_tokens": 204.6,
-      "basis": "saved artifact characters divided by four",
-      "runtime_cost": "[UNKNOWN]"
-    }
-  },
-  "stagev_followup": {
-    "session_date": "2026-10-02",
-    "target": "knowledge/containment-auto-mode-network-and-change-surface-addendum/02-finding-2-auto-mode-is-useful-but-probabilistic.md",
-    "H1": "pass",
-    "H2": "complete",
-    "H3": {
-      "claims": [
-        "C06",
-        "C26",
-        "C27"
-      ],
-      "distinct_research_attempts": "[UNKNOWN] each",
-      "saved_fetches": 1,
-      "disposition": "remain UNVERIFIED; no quarantine"
-    },
-    "H4": {
-      "qualifying_n": 10,
-      "outcome": "pass; both initial disagreements traced and corrected in a fresh verifier context",
-      "upper_bound": "not applicable",
-      "initial_confirm": 8,
-      "initial_partial": 1,
-      "initial_contradict": 1,
-      "source_too_old": 0,
-      "initial_disagreements": 2,
-      "disagreements_traced_and_fixed": 2,
-      "corrected_claim_rechecks_confirmed": 2,
-      "unresolved_disagreements": 0,
-      "one_sided_95pct_upper_error_bound": 0.5069013010632024,
-      "bound_label": "[ESTIMATED: exact binomial]",
-      "claims": {
-        "C03": "confirm",
-        "C07": "confirm",
-        "C08": "confirm; false-positive-rate wording clarified",
-        "C11": "confirm",
-        "C18": "confirm",
-        "C19": "confirm",
-        "C30": "confirm",
-        "C34": "initial partial; scope mismatch traced; corrected replacement confirmed",
-        "C39": "confirm",
-        "C43": "initial contradict; supplied title was wrong; corrected replacement confirmed"
-      }
-    },
-    "H5": {
-      "rows": 64,
-      "tool_calls": "[UNKNOWN]",
-      "seconds": "[UNKNOWN]",
-      "saved_aggregate_fetches": 55,
-      "sum_recorded_known_fetches": 53,
-      "per_claim_reconciliation": "[UNKNOWN] two fetches across missing claim rows",
-      "h4_sample_per_claim_fetches": "[UNKNOWN]",
-      "inventory_fetch_sum": 54,
-      "reconciliation_gap": "1 fetch"
-    },
-    "scaling": "pass",
-    "claims_before_split": 47,
-    "claims_after_split": 64,
-    "atomic_subclaims": 64,
-    "verified": 44,
-    "unverified": 20,
-    "quarantined": 0,
-    "target_line_metrics": {
-      "lines_verified": 46,
-      "lines_unverified": 21,
-      "lines_refuted_corrected": 0,
-      "factual_lines": 67,
-      "tagged_pct": 100.0
-    }
   }
 }

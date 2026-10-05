@@ -150,7 +150,7 @@ def main():
             tagged=bool(TAG_RE.search(ln))
             stripped=ln.strip()
             # Headings and Markdown table separators are excluded from the rule.
-            factual=bool(len(ln.split())>=5 and not stripped.startswith(("#","|","<")) and not re.fullmatch(r"\|?\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)*\|?", stripped))
+            factual=bool(len(ln.split())>=5 and not stripped.startswith("#") and not re.fullmatch(r"\|?\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)*\|?", stripped))
             if factual:
                 if tagged:
                     if re.search(r"\[VERIFIED\b",ln): file_line_metrics["lines_verified"]+=1

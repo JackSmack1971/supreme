@@ -138,6 +138,8 @@ Before writing `[VERIFIED ...]`:
 - record the source locator; and
 - for load-bearing claims, require one primary source or two independent corroborations.
 
+For routine later-file verification, sample five VERIFIED claims per file using the H4 method: give a fresh-context verifier only each claim text, with no URL or locator, and ask it to find dated primary-source evidence confirming or contradicting the claim. Any disagreement triggers full re-verification of that file's VERIFIED claims.
+
 ### G2 — Discovery gate
 
 Novel working solutions are high-value knowledge and require stronger evidence before promotion.

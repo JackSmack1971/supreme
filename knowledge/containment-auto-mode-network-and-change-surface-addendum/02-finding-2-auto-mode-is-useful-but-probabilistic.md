@@ -1,6 +1,6 @@
 ---
 title: "Finding 2 — Auto mode is useful but probabilistic"
-summary: "Imported unverified source material from Containment, Auto Mode, Network, and Change-Surface Addendum; verification remains pending."
+summary: "Claude Code Auto mode evidence, limitations, containment context, and explicitly unverified recommendations."
 as_of: 2026-10-02
 last_verified: 2026-10-02
 reverify_by: 2026-11-01
@@ -52,6 +52,14 @@ sources:
     url: "https://code.claude.com/docs/en/sandboxing"
     accessed: 2026-10-02
     locator: "Sandbox platform support, lines 81-85; default boundaries, lines 95-104"
+  - id: S12
+    url: "https://code.claude.com/docs/en/permission-modes"
+    accessed: 2026-10-02
+    locator: "Which mode a session starts in; Eliminate prompts with auto mode; When auto mode falls back; Repeated-block thresholds"
+  - id: S13
+    url: "https://claude.com/blog/auto-mode"
+    accessed: 2026-10-02
+    locator: "Date March 24, 2026; update banner dated July 10, 2026; Getting started"
   - id: S0
     url: "legacy/Containment, Auto Mode, Network, and Change-Surface Addendum.md"
     accessed: 2026-10-02
@@ -62,138 +70,85 @@ aliases: []
 related: []
 ---
 ## Answer
-Imported material; unverified content is explicitly tagged below. [UNVERIFIED]
+Auto mode reduces approval prompts but remains a probabilistic supervision layer that can miss unsafe actions. [VERIFIED 2026-10-02 S1,S2]
 
 ## Conditions
-Original source text is preserved below without factual review. [UNVERIFIED]
+These claims describe Claude Code and the cited Anthropic reports and documentation as fetched on 2026-10-02. Product availability varies by surface and settings scope. [VERIFIED 2026-10-02 S1,S3]
 
 ## Detail
-7. **Cost/context implications:** Less interruption and approval fatigue; isolation/network configuration adds setup cost. [VERIFIED 2026-10-02 S1,S2,S6]
-8. **Security implications:** Approval fatigue can reduce attention to individual approval prompts and weaken oversight. [VERIFIED 2026-10-02 S1,S2]
-9. **Open question remaining:** What default containment/permission combination best serves novice Windows users? [UNVERIFIED]
+### Verified claims
+- C01: Auto mode reduces approval prompts. (locator: lines 17, 23) [VERIFIED 2026-10-02 S1]
+- C02: Auto mode can miss unsafe actions. (locator: S1 lines 78-95; S2 lines 23-25) [VERIFIED 2026-10-02 S1,S2]
+- C03: Auto mode delegates approvals to model-based classifiers. (locator: lines 23-29) [VERIFIED 2026-10-02 S1]
+- C04: Auto mode probes tool outputs for prompt injection. (locator: lines 26-30) [VERIFIED 2026-10-02 S1]
+- C07: The full Auto mode pipeline had a 17% false-negative rate on 52 real overeager-action examples. (locator: lines 78-95) [VERIFIED 2026-10-02 S1]
+- C08: The full Auto mode pipeline had a 0.4% false-positive rate on benign real-traffic actions. (locator: lines 78-90) [VERIFIED 2026-10-02 S1]
+- C10: Anthropic cautions that Auto mode is not a replacement for careful high-stakes human review. (locator: lines 94-95) [VERIFIED 2026-10-02 S1]
+- C11: Anthropic reported successful credential exfiltration in 24 of 25 controlled retries. (locator: lines 66-70) [VERIFIED 2026-10-02 S2]
+- C12: Environmental egress controls and filesystem boundaries can block exfiltration independently of model intent. (locator: lines 36-44, 67-68) [VERIFIED 2026-10-02 S2]
+- C14: The described macOS/Linux sandbox permits workspace writes and denies network access by default. (locator: lines 57-59) [VERIFIED 2026-10-02 S2]
+- C18: Anthropic reported users approved roughly 93% of permission prompts. (locator: S1 lines 17-20; S2 lines 23-24) [VERIFIED 2026-10-02 S1,S2]
+- C19: Anthropic reported sandboxing reduced permission prompts by 84%. (locator: lines 57-60) [VERIFIED 2026-10-02 S2]
+- C21: The cited study warns that fault-proneness metric thresholds do not generalize uniformly. (locator: lines 3329-3334) [VERIFIED 2026-10-02 S7]
+- C23: Claude Code PreToolUse hooks can block actions before execution. (locator: lines 180-194) [VERIFIED 2026-10-02 S8]
+- C29: Auto mode returns a blocked action as a tool result that can enable a safer retry. (locator: lines 125-130) [VERIFIED 2026-10-02 S1]
+- C30: Corrected: auto mode pauses after three consecutive or twenty total denials and Claude Code resumes prompting; a non-interactive `-p` run without a `--permission-prompt-tool` does not stop the run. (locator: "When auto mode falls back") [VERIFIED 2026-10-02 S12]
+- C34: Auto mode uses classifier review, permission results, and denial escalation. (locator: lines 23-29, 127-130) [VERIFIED 2026-10-02 S1]
+- C39: Anthropic describes permission bypass as high risk and suitable only for isolated environments. (locator: S1 lines 19-20; S3 lines 214-216) [VERIFIED 2026-10-02 S1,S3]
+- C41: The cited Configure permissions page is official Claude Code documentation. (locator: page title and content) [VERIFIED 2026-10-02 S4]
+- C42: The cited Security page covers built-in protections and prompt-injection safeguards. (locator: lines 54-85) [VERIFIED 2026-10-02 S5]
+- C43: Anthropic’s “Beyond permission prompts: making Claude Code more secure and autonomous” article was published October 20, 2025. (locator: lines 13-17) [VERIFIED 2026-10-02 S6]
+- C44: Anthropic reports repeated permission prompts can cause approval fatigue. (locator: S1 lines 17-20; S2 lines 23-24) [VERIFIED 2026-10-02 S1,S2]
+- C45: Sandboxing and network controls require configuration that adds setup or maintenance work. (locator: S1 lines 19-20; S6 lines 17-19) [VERIFIED 2026-10-02 S1,S6]
+- C46: Rubber-stamp approvals can create oversight without sustained attention to each prompt. (locator: S1 lines 17-20; S2 lines 23-24) [VERIFIED 2026-10-02 S1,S2]
+- C47: Auto mode uses server-side classifier and probe checks for actions and tool outputs. (locator: lines 26-29) [VERIFIED 2026-10-02 S1]
+- C48: Auto mode optimizes common safe in-project writes for fast passage. (locator: lines 48-55) [VERIFIED 2026-10-02 S1]
+- C49: Claude Code’s Bash sandbox supports macOS, Linux, and WSL2; native Windows commands run unsandboxed. (locator: lines 81-85) [VERIFIED 2026-10-02 S11]
 
-### Finding 2 — Auto mode is useful but probabilistic
+### Atomic splits of partly verified claims
 
-1. **Finding:** Auto mode reduces prompt burden and can catch overeager behavior, but a model classifier has a non-zero miss rate. [VERIFIED 2026-10-02 S1,S2]
-2. **Evidence/source:** Anthropic, “How we built Claude Code auto mode” (March 25, 2026) and “How we contain Claude across products” (May 25, 2026). [VERIFIED 2026-10-02 S1,S2]
-3. **Evidence strength:** Strong, Tier 1. [UNVERIFIED]
-4. **Claude Code mechanism implicated:** Permission mode `auto`, documented Auto-mode configuration, classifier-based approval, prompt-injection probe. [VERIFIED 2026-10-02 S1,S3]
-5. **Global `~/.claude` candidate?** Conditional; availability varies by plan/model/provider and supported settings scope. [UNVERIFIED]
-6. **Enforcement:** Probabilistic classifier inside deterministic outer boundaries; human escalation for high-impact ambiguity. [VERIFIED 2026-10-02 S1,S2]
-7. **Cost/context implications:** Fewer user interruptions; classifier checks add service-side work but common safe actions are optimized for fast passage. [VERIFIED 2026-10-02 S1]
-8. **Security implications:** Safer than unrestricted bypass, but not a substitute for sandboxing, narrow credentials, or static denies. [VERIFIED 2026-10-02 S1,S2]
-9. **Open question remaining:** Should Supreme recommend Auto mode where available, and what fallback should apply where unavailable? [UNVERIFIED]
+- C05 supported: Auto mode availability varies by product surface and supported settings scope. (locator: lines 207-227) [VERIFIED 2026-10-02 S3]
+- C05 remainder resolved: auto mode availability is documented as depending on plan, model, provider, and organization setting, with all plans qualifying and Team and Enterprise administrators able to disable it. (locator: "Eliminate prompts with auto mode") [VERIFIED 2026-10-02 S12]
+- C13 supported: Anthropic describes layered containment controls for filesystem, network, and credentials. (locator: lines 36-44, 67-68) [VERIFIED 2026-10-02 S2]
+- C13 remainder: The source does not state that every deployment universally requires all three restrictions. [UNVERIFIED]
+- C16 supported: Documented Auto mode availability differs across supported product surfaces and settings scopes. (locator: lines 207-227) [VERIFIED 2026-10-02 S3]
+- C16 remainder: The source does not establish a general rule covering configuration enforcement in every environment. [UNVERIFIED]
+- C17 supported: Anthropic’s examples ground permission decisions in user authorization and environment boundaries. (locator: S1 lines 63-65; S2 lines 36-44) [VERIFIED 2026-10-02 S1,S2]
+- C17 remainder: The sources do not state that every egress or secret-exposure expansion universally requires human approval. [UNVERIFIED]
+- C20 supported: The cited study cautions that software-metric thresholds do not generalize uniformly across projects. (locator: lines 3329-3334) [VERIFIED 2026-10-02 S7]
+- C20 remainder: The study does not compare deviation signals with universal file or line thresholds for agent safety. [UNVERIFIED]
+- C22 supported: Anthropic’s Auto mode examples discuss authorization boundaries and scope escalation. (locator: lines 40-45, 63-65) [VERIFIED 2026-10-02 S1]
+- C22 remainder: The examples do not directly prescribe Supreme’s expected-change-scope workflow. [UNVERIFIED]
+- C24 supported: Git documents commands for viewing working-tree status and differences. (locator: S9 lines 231-240; S10 description) [VERIFIED 2026-10-02 S9,S10]
+- C24 remainder: The cited Git manuals do not document task-local path sets as a product mechanism. [UNVERIFIED]
+- C25 supported: Anthropic evaluates classifier decisions on examples involving authorization boundaries. (locator: lines 40-45, 63-65) [VERIFIED 2026-10-02 S1]
+- C25 remainder: The source does not establish that human or model review generally detects semantic scope expansion. [UNVERIFIED]
+- C28 supported: Anthropic’s examples include unauthorized deletion and scope escalation. (locator: lines 40-45) [VERIFIED 2026-10-02 S1]
+- C28 remainder: The source does not cover every listed unrelated rewrite, dependency change, or migration case. [UNVERIFIED]
+- C31 supported: Auto mode returns a denied action as a tool result and permits a safer retry. (locator: lines 125-130) [VERIFIED 2026-10-02 S1]
+- C31 remainder: The source does not measure a reduction in total user interruptions from deny-and-continue. [UNVERIFIED]
+- C32 supported: Auto mode documents denial results that let Claude try a safer alternative. (locator: lines 127-130) [VERIFIED 2026-10-02 S1]
+- C32 remainder: The source does not directly compare this design with asking users to override every denial. [UNVERIFIED]
+- C33 supported: Anthropic instructs Auto mode not to route around a denied action. (locator: lines 127-129) [VERIFIED 2026-10-02 S1]
+- C33 remainder: A universal requirement for anti-circumvention rules remains a recommendation, not a measured result. [UNVERIFIED]
+- C35 supported: Anthropic’s credential-exfiltration example used a VM-provisioned session token. (locator: lines 66-68) [VERIFIED 2026-10-02 S2]
+- C35 remainder: The example does not establish scoped, proxied, or short-lived credentials as a universal product requirement. [UNVERIFIED]
+- C36 supported: Anthropic describes filesystem isolation combined with network controls as a containment pattern. (locator: lines 36-44, 67-68) [VERIFIED 2026-10-02 S2]
+- C36 remainder: The sources do not guarantee that this pattern always reduces blast radius in every deployment. [UNVERIFIED]
+- C37 supported: Auto mode distinguishes user authorization from trusted environment configuration. (locator: lines 63-75) [VERIFIED 2026-10-02 S1]
+- C37 remainder: The source does not directly compare a project-wide static allowlist with a task-specific change surface. [UNVERIFIED]
+- C38 supported: The cited study warns against generalizing software-metric thresholds across projects. (locator: lines 3329-3334) [VERIFIED 2026-10-02 S7]
+- C38 remainder: The study does not evaluate fixed file, line, diff, or complexity caps for agent changes. [UNVERIFIED]
+- C40 supported: The imported addendum contains sections on Auto mode availability, incidents, containment, change surface, and denial behavior. (locator: legacy source, “Finding 2” and adjacent sections) [VERIFIED 2026-10-02 S0]
+- C40 remainder: The presence of those sections does not independently verify the external Claude Code product claims they discuss. [UNVERIFIED]
 
-### Finding 3 — Filesystem, network, and credential boundaries are jointly necessary
-
-1. **Finding:** Strong high-autonomy containment requires jointly restricting filesystem reach, network egress, and credential exposure. [REPORTED S2]
-2. **Evidence/source:** Anthropic's sandboxing and containment engineering reports, including the controlled AWS-credential exfiltration result. [VERIFIED 2026-10-02 S2]
-3. **Evidence strength:** Strong, Tier 1. [UNVERIFIED]
-4. **Claude Code mechanism implicated:** Sandbox filesystem/network controls, environment design, permission rules, connector/tool scopes. [UNVERIFIED]
-5. **Global `~/.claude` candidate?** Conditional; the principle is global, enforcement is environment-dependent. [UNVERIFIED]
-6. **Enforcement:** Deterministic sandbox/proxy/environment policy where available; human approval to expand egress or secret exposure. [UNVERIFIED]
-7. **Cost/context implications:** Added setup friction and occasional blocked network flows; large reduction in potential blast radius. [UNVERIFIED]
-8. **Security implications:** Critical for prompt injection, credential theft, and compromised subprocesses. [UNVERIFIED]
-9. **Open question remaining:** What Windows-native fallback can provide comparable guarantees without WSL2/VM/container isolation? [UNVERIFIED]
-
-### Finding 4 — Change-size policy should be deviation-based, not numerical
-
-1. **Finding:** Unexpected scope expansion is a stronger safety signal than crossing a universal file/line threshold. [UNVERIFIED]
-2. **Evidence/source:** Anthropic's Auto mode report discusses authorization boundaries; a 2018 fault-proneness study states that proposed software-metric thresholds cannot be generalized to all projects, while not evaluating agent change-size policies. [VERIFIED 2026-10-02 S1,S7]
-3. **Evidence strength:** Moderate-to-strong. [UNVERIFIED]
-4. **Claude Code mechanism implicated:** Change map, Git diff/status, task-local allowed/protected paths, `PreToolUse`, review/completion gates. [UNVERIFIED]
-5. **Global `~/.claude` candidate?** Yes for the invariant “detect material deviation”; no for global numeric caps. [UNVERIFIED]
-6. **Enforcement:** Deterministic path/diff checks where representable; human/model review for semantic scope expansion. [UNVERIFIED]
-7. **Cost/context implications:** Low when based on summarized Git state; avoids false positives and metric gaming. [UNVERIFIED]
-8. **Security implications:** Helps detect unrelated rewrites, unexpected dependency/migration edits, and unauthorized deletions. [UNVERIFIED]
-9. **Open question remaining:** How should the expected change surface be refreshed after legitimate new discoveries? [UNVERIFIED]
-
-### Finding 5 — Deny-and-continue is preferable to unnecessary interruption when a safe alternative exists
-
-1. **Finding:** A blocked action need not always become a human prompt; letting the agent find a safer path can preserve autonomy while respecting the boundary. [VERIFIED 2026-10-02 S1]
-2. **Evidence/source:** Anthropic Auto-mode deny-and-continue design; three consecutive denials or 20 total denials stop the model and escalate, while headless mode terminates. [VERIFIED 2026-10-02 S1]
-3. **Evidence strength:** Strong for the product design; moderate for generalization to Supreme's future custom controls. [UNVERIFIED]
-4. **Claude Code mechanism implicated:** Auto mode, permission denial results, `PreToolUse`, human escalation. [UNVERIFIED]
-5. **Global `~/.claude` candidate?** Conditional. [UNVERIFIED]
-6. **Enforcement:** Deterministic/probabilistic denial depending layer; human approval only after repeated or consequential failure. [UNVERIFIED]
-7. **Cost/context implications:** Reduces false-positive interruptions; may add one or more retry turns. [UNVERIFIED]
-8. **Security implications:** Safer than asking the user to override every denied action; requires anti-circumvention rules so the agent does not route around a boundary. [UNVERIFIED]
-9. **Open question remaining:** Which denial patterns should immediately stop versus permit a safer retry? [UNVERIFIED]
-
-## A. Design requirements derived from the evidence
-
-1. Prefer hard environmental containment over high-frequency permission prompting where supported. [UNVERIFIED]
-2. Treat Auto mode as an experimental probabilistic supervision layer, never as deterministic containment. [UNVERIFIED]
-3. Detect Auto-mode availability and supported configuration instead of assuming it. [UNVERIFIED]
-4. Minimize credential exposure to the agent; prefer scoped/proxied/short-lived authority. [UNVERIFIED]
-5. Couple filesystem isolation with network egress restrictions for high-autonomy or untrusted work where possible. [UNVERIFIED]
-6. Treat expansion of network access or secret exposure as a consequential action requiring policy or human authorization. [UNVERIFIED]
-7. Derive task-local expected/protected change surfaces from reconnaissance. [UNVERIFIED]
-8. Detect scope deviation relative to that surface rather than imposing universal maximum diff size. [UNVERIFIED]
-9. Re-run reconnaissance when legitimate discoveries materially expand the change surface. [UNVERIFIED]
-10. Prefer deny-and-continue when a safe alternative exists; escalate repeated or consequential denial patterns. [UNVERIFIED]
-11. Keep bypass-permissions modes out of novice defaults unless the execution environment is genuinely isolated. [UNVERIFIED]
-12. On native Windows, Claude Code runs commands unsandboxed; its built-in Bash sandbox is documented for macOS, Linux, and WSL2. [VERIFIED 2026-10-02 S11]
-
-## B. Anti-requirements
-
-Supreme should **not**: [UNVERIFIED]
-
-- treat Auto mode or any classifier as a hard security boundary; [UNVERIFIED]
-- rely on repeated approval prompts as the primary containment mechanism; [UNVERIFIED]
-- expose broad long-lived credentials when narrower authority is practical; [UNVERIFIED]
-- allow unrestricted egress for high-autonomy/untrusted work merely for convenience; [UNVERIFIED]
-- assume a user will notice model drift quickly enough to serve as the only safety layer; [UNVERIFIED]
-- use `--dangerously-skip-permissions` as a novice default on an unrestricted host; [UNVERIFIED]
-- hard-code a universal maximum file count, changed-line count, diff size, or complexity threshold; [UNVERIFIED]
-- treat a project-wide static file allowlist as equivalent to a task-specific authorized change surface; [UNVERIFIED]
-- let a blocked agent route around a safety boundary simply to achieve the same prohibited side effect by another tool. [UNVERIFIED]
-
-## C. Unresolved questions
-
-1. Should Supreme recommend Auto mode whenever available, or prefer sandbox + narrower deterministic permissions for novice defaults? [UNVERIFIED]
-2. What policy should apply on plans/providers where Auto mode is unavailable? [UNVERIFIED]
-3. What Windows-native mechanism, if any, can provide robust egress and credential isolation without WSL2/VM/container use? [UNVERIFIED]
-4. How should expected/protected file sets refresh when legitimate implementation discoveries expand scope? [UNVERIFIED]
-5. When should repeated denials terminate work versus escalate to a human? [UNVERIFIED]
-6. How should Supreme distinguish a harmless new development dependency from a meaningful supply-chain expansion? [UNVERIFIED]
-7. Can network/credential policy be enforced portably enough from a primarily `~/.claude`-based control plane, or must high-assurance containment live outside `.claude`? [UNVERIFIED]
-8. How should external MCP/connector capabilities be reduced to least privilege without making common workflows unusable? [UNVERIFIED]
-
-## D. Sources
-
-### Tier 1 — Anthropic / Claude Code
-
-- [Claude Code Desktop](https://code.claude.com/docs/en/desktop) — official documentation describing permission modes and Auto mode availability. [VERIFIED 2026-10-02 S3]
-- [Configure permissions](https://code.claude.com/docs/en/permissions) — official Claude Code permissions documentation. [VERIFIED 2026-10-02 S4]
-- [Security](https://code.claude.com/docs/en/security) — official Claude Code security documentation covering built-in protections and prompt-injection safeguards. [VERIFIED 2026-10-02 S5]
-- [Anthropic, “Beyond permission prompts: making Claude Code more secure and autonomous”](https://www.anthropic.com/engineering/claude-code-sandboxing) — published October 20, 2025. [VERIFIED 2026-10-02 S6]
-- [Anthropic, “How we built Claude Code auto mode: a safer way to skip permissions”](https://www.anthropic.com/engineering/claude-code-auto-mode) — published March 25, 2026. [VERIFIED 2026-10-02 S1]
-- [Anthropic, “How we contain Claude across products”](https://www.anthropic.com/engineering/how-we-contain-claude) — published May 25, 2026. [VERIFIED 2026-10-02 S2]
-- [Hooks reference](https://code.claude.com/docs/en/hooks) — official documentation says `PreToolUse` runs before a tool call and can block it. [VERIFIED 2026-10-02 S8]
-- [Git status](https://git-scm.com/docs/git-status) and [Git diff](https://git-scm.com/docs/git-diff) — primary command references for viewing working-tree state and changes. [VERIFIED 2026-10-02 S9,S10]
-- [Configure the sandboxed Bash tool](https://code.claude.com/docs/en/sandboxing) — official docs identify macOS, Linux, and WSL2 support and state that native Windows commands run unsandboxed. [VERIFIED 2026-10-02 S11]
-
-### Existing Supreme evidence reused
-
-- `Evidence-Backed Brownfield Reconnaissance and Change Containment.md` — repository-state, change-map, evidence-sufficiency, worktree/checkpoint/hook/permissions foundation. [UNVERIFIED]
-- [Boucher and Badri, “Software metrics thresholds calculation techniques to predict fault-proneness: An empirical comparison”](https://depot-e.uqtr.ca/8430/1/032072458.pdf) — the study warns that thresholds cannot be generalized to all projects, but studies fault-proneness metrics rather than agent change-size policies. [VERIFIED 2026-10-02 S7]
-
-## Corpus impact
-
-This addendum closes the named gaps from the research brief around: [UNVERIFIED]
-
-- Auto mode status and limitations; [UNVERIFIED]
-- Anthropic's overeager-action incident evidence; [UNVERIFIED]
-- containment versus repeated permission prompting; [UNVERIFIED]
-- network egress and secrets boundaries; [UNVERIFIED]
-- allowed/protected task-local file surfaces; [UNVERIFIED]
-- maximum-change-size policy; [UNVERIFIED]
-- deny-and-continue behavior; [UNVERIFIED]
-- the relationship between probabilistic supervision and deterministic containment. [UNVERIFIED]
-
-The remaining brownfield questions are now predominantly **implementation/runtime questions**, especially native-Windows containment, portable hook health, state freshness across concurrent actors, and the representation of task-local authorized change surfaces. [UNVERIFIED]
+### Corrected and unverified claims
+- C06 corrected: auto mode was a research preview at its March 24, 2026 launch and has been generally available for all users since July 10, 2026. (locator: update banner; "Getting started") [VERIFIED 2026-10-02 S13,S12]
+- C26: Summarized Git state makes deviation checks low-cost. [UNVERIFIED]
+- C27: Deviation-based policies avoid false positives and metric gaming. [UNVERIFIED]
 
 ## Dead Ends
+The March 25, 2026 engineering report states that a headless run terminates the process, but current permission-modes documentation states that Claude Code does not stop the run. [VERIFIED 2026-10-02 S1,S12]
 
 ## Open Questions
+- What default containment and permission combination best serves novice Windows users? [UNVERIFIED]

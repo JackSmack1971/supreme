@@ -27,7 +27,8 @@
   },
   "independent_check_agreement": {
     "agreed": 5,
-    "sampled": 5
+    "sampled": 5,
+    "method_note": "Earlier source-assisted check; not a qualifying H4 fresh-context verifier result."
   },
   "wall_time": {
     "start_utc": "2026-10-03T01:28:09Z",
@@ -35,27 +36,25 @@
     "minutes_rounded": 46,
     "scope": "elapsed since first reliable timestamp; earlier initial reconnaissance was not timed"
   },
-  "saved_artifact_size_proxy": {
-    "files": [
-      "knowledge/containment-auto-mode-network-and-change-surface-addendum/02-finding-2-auto-mode-is-useful-but-probabilistic.md",
-      "reports\\2026-10-02.stagev-inventory.md",
-      "reports/2026-10-02-stagev.md",
-      "reports\\2026-10-02-stagev-validator.metrics.json"
-    ],
-    "characters": 38471,
-    "approx_tokens_chars_div_4": 9618,
-    "approx_tokens_per_claim": 204.6
-  },
-  "remaining_legacy_tokens": 106515,
-  "remaining_claims_estimate": 1294,
-  "projected_remaining_artifact_tokens_estimate": {
-    "label": "[ESTIMATED]",
-    "measured_rate_approx_tokens": 264752,
-    "upper_planning_at_1_5x_approx_tokens": 397128
-  },
-  "proxy_limit": "Artifact-size estimate only; no model runtime token or dollar billing telemetry was available.",
   "validator_output": "reports\\2026-10-02-stagev-validator.metrics.json",
   "validator_exit_code": 0,
   "validator_legacy_remaining": 7,
-  "contract_gap": "Heuristic factual-line detection cannot prove semantic claim coverage; BACKLOG.md C-012"
+  "contract_gap": "Heuristic factual-line detection cannot prove semantic claim coverage; BACKLOG.md C-012",
+  "artifact_size_per_claim": {
+    "approx_tokens": 204.6,
+    "basis": "saved artifact characters divided by four",
+    "runtime_cost": "[UNKNOWN]"
+  },
+  "post_followup": {
+    "claims": 64,
+    "atomic_subclaims": 64,
+    "verified": 44,
+    "unverified": 20,
+    "quarantined": 0,
+    "target_factual_lines": 67,
+    "target_tagged_factual_lines": 67,
+    "tag_coverage_pct": 100.0,
+    "load_bearing_source_coverage_pct": 93.3,
+    "basis": "saved pilot metrics and final validator output"
+  }
 }
